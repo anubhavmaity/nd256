@@ -1,0 +1,45 @@
+Task 0 -- O(1)
+Accessing the index and printing the values in an array take O(1) time.
+So the time taken to access and print the values takes O(1) time.
+
+------------------------------------------------------------------------------------------------------------------------
+Task1 -- [O(n) to O(n^2)]
+Traversing the list takes O(n) time and adding each element to a set takes O(1) time in average.
+Set in python is a hash set where the addition of an element takes O(1) time in average.
+So the total time taken in average will be O(n) time.
+
+If there are collisions in the set, the addition of each element may take time O(n).
+The time complexity of traversing csv file and addition of each element in this case will take O(n^2) time.
+
+Without collisions the time taken will be O(n) time.
+
+------------------------------------------------------------------------------------------------------------------------
+Task2 -- [O(n) to O(n^2)]
+Traversing the list and adding to the map takes O(n). Adding an element to a map takes O(1) time in average.
+Getting the maximum value and its correspoding key will take O(n) time.
+So the total time taken will be O(n) time if there is no collision.
+
+If there is a collision in the map, adding an element may take O(n) time. So traversing the list and adding to the map
+may take O(n^2). And during collision, getting the maximum value and its corresponding key may take O(n^2)
+
+Without collisions, the time taken will be O(n) time.
+
+------------------------------------------------------------------------------------------------------------------------
+Task3 -- O(nlogn)
+Traversing the list will take O(n) time.
+Matching the fixed length string and checking space will take constant time O(1) because telephone numbers are fixed length.
+The time taken for traversing and string matching will be O(n) time.
+If the strings were very larger in length comparable to the list length, then traversing and matching the string may have taken O(n^2).
+Sorting the list, will take O(nlogn)
+Traversing the list again with fixed string matching will take O(n) time.
+So this program will take O(nlogn) in worst case.
+
+------------------------------------------------------------------------------------------------------------------------
+Task4 -- [O(n) to O(n^2)]
+Creating set for outgoing calls, text sender and text receiver will take O(n) time. Due to collisions in the set, it may take O(n^2).
+Traversing the list and checking the value in set will take O(n). But due to collision in the set, it may take O(n^2).
+Sorting the telemarketer list will take O(nlogn) time.
+
+If there is collision, it may go up to O(n^2) time.
+
+So, without collision, this program will take O(nlogn) time.
