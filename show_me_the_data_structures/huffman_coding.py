@@ -53,7 +53,7 @@ def build_tuple_list(char_frequency):
     return sorted(char_frequency_list)
 
 def huffman_encoding(data):
-
+    pass
 
 def huffman_decoding(data,tree):
     pass

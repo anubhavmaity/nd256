@@ -2,7 +2,7 @@ class LRU_Cache(object):
 
     def __init__(self, capacity):
         # Initialize class variables
-        queue = []
+        pass
 
     def get(self, key):
         # Retrieve item from provided key. Return -1 if nonexistent.
