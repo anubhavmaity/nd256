@@ -1,21 +1,20 @@
 import sys
 
 class Node:
-    def __init__(self, char, frequency):
+    def __init__(self, char, frequency, bit = 0):
         self.char = char
         self.frequency = frequency
         self.right = None
         self.left = None
-        self.bit = -1
+        self.bit = bit
 
 class Tree:
     def __init__(self):
         self.root = None
 
-    def add_node(self, value):
+    def add_node(self, char, frequency):
         if not self.root:
-            self.root = Node(value)
-            self.root.bit = 0
+            self.root = Node(char, frequency)
         else:
             self.current = self.root
             while True:
@@ -29,7 +28,9 @@ class Tree:
                 else:
                     break
             if not self.current.left:
-                self.current.left =
+                self.current.left = Node(char, frequency, 0)
+            elif not self.current.right:
+                self.current.right = Node(char, frequency, 1)
 
 
 
