@@ -17,7 +17,7 @@ class Block:
       self.hash = calc_hash(data)
 
     def __repr__(self):
-      return "Block is created on {} with data {} and its hashed value as {}, the previous hash is {}".format(self.timestamp, self.data, self.hash, self.previous_hash) 
+      return "Block is created on {} with data {} and its hashed value as {}".format(self.timestamp, self.data, self.hash)
 
 
 class BlockChain:
@@ -55,23 +55,30 @@ class BlockChain:
 
     def traverse(self):
       block = self.head
+      str = ''
       while True:
-        print(block)
+        if not block:
+          str += 'None'
+        else:
+          str += repr(block) + ' -> '
         if block and block.previous_hash in self.block_address:
           block = self.block_address[block.previous_hash]
         else: 
           break
+      return str
 
 def block_chain_app():
   block_chain = BlockChain()
-  block_chain.traverse()
+  print(block_chain.traverse())
+  # None
   block_chain.add("Transaction 9")
   block_chain.add("Transaction 10")
   block_chain.add("Transaction 11")
   block_chain.add("Transaction 12")
   block_chain.remove("Transaction 10")
   block_chain.remove("Transaction 9")
-  block_chain.traverse()
+  print(block_chain.traverse())
+  # Block is created on 2019-05-29 09:48:55.100351+00:00 with data Transaction 12 and its hashed value as 58396bf6a2d410da6c5fee52df975e41ca92f0195db0a9624c96ebec9230b420 -> Block is created on 2019-05-29 09:48:55.100343+00:00 with data Transaction 11 and its hashed value as d0516c65790519d9e739b5596a1e467009dfacfa9155740aaf2620d3914cb6b6 ->
 
 
 if __name__ == '__main__':
