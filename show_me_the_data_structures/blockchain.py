@@ -11,7 +11,7 @@ def calc_hash(data):
 class Block:
 
     def __init__(self, data):
-      self.timestamp = datetime.datetime.now()
+      self.timestamp = datetime.datetime.now(datetime.timezone.utc)
       self.data = data
       self.previous_hash = None
       self.hash = calc_hash(data)
@@ -64,6 +64,7 @@ class BlockChain:
 
 def block_chain_app():
   block_chain = BlockChain()
+  block_chain.traverse()
   block_chain.add("Transaction 9")
   block_chain.add("Transaction 10")
   block_chain.add("Transaction 11")

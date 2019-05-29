@@ -114,29 +114,23 @@ class LRU_Cache(object):
             self.doubly_linked_list.insert(0, new_node)
 
 
-def main():
+def test_cases():
     lru_cache = LRU_Cache(5)
     lru_cache.set(3, 5)
     lru_cache.set(4, 5)
     lru_cache.set(5, 5)
-    print(lru_cache.get(3))
-    # 5
+    assert lru_cache.get(3) == 5
     lru_cache.set(6, 5)
     lru_cache.set(7, 5)
     lru_cache.set(8, 5)
-    print(lru_cache.get(4))
-    # -1
+    assert lru_cache.get(4) == -1
     lru_cache.set(4, 4)
-    print(lru_cache.get(5))
-    # -1
-    print(lru_cache.get(4))
-    # 4
-    print(lru_cache.get(2))
-    # -1
-    print(lru_cache.get(None))
-    # -1
-    print(lru_cache.get(6))
-    # 5
+    assert lru_cache.get(5) == -1
+    assert lru_cache.get(4) == 4
+    assert lru_cache.get(2) == -1
+    assert lru_cache.get(None) == -1
+    assert lru_cache.get(6) == 5
+    print("All the test cases has passed")
 
 if __name__ == '__main__':
-    main()
+    test_cases()
