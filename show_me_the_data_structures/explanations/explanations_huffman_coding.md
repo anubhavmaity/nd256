@@ -15,4 +15,4 @@ Elements in the min heap -- O(n)
 
 I have used priority queue where the priority is given to the frequency of character. If the frequency of character is
 higher then huffman code length of it will be less. Thus leading to better compression. The priority queue helps in
-maintaining the priority order when inserting and removing the element. 
+maintaining the priority order when inserting and removing the element.
